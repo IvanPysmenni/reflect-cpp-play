@@ -1,0 +1,43 @@
+command: "route"
+route:
+  inputUrl: "srt://127.0.0.1:10000"
+  outputUrl: "srt://127.0.0.1:11000"
+  message_size: 1024
+  bidir: true
+  close_listener: true
+  stats_file: "stats_file.csv"
+  stats_format: "csv"
+  stats_freq_ms: 10000
+generate:
+  outputUrl: "srt://127.0.0.1:11000"
+  sendrate: 1000
+  num_messages: 20
+  duration: 10000000
+  message_size: 1024
+  two_way: true
+  enable_metrics: true
+  spin_wait: true
+  playback_csv: "playback.csv"
+  stats_file: "stats_file.csv"
+  stats_format: "csv"
+  stats_freq_ms: 10000
+  reconnect: true
+  max_conns: 15
+  concurrent_streams: 5
+  close_listener: true
+receive: 
+  inputUrl: "srt://127.0.0.1:10000"
+  print_notifications: true
+  send_reply: true
+  enable_metrics: true
+  metrics_freq_ms: 10000
+  max_connections: 15
+  message_size: 1024
+  metrics_file: "metrics.txt"
+  stats_file: "stats_file.csv"
+  stats_format: "csv"
+  stats_freq_ms: 10000
+  reconnect: true
+  max_conns: 15
+  concurrent_streams: 5
+  close_listener: true
